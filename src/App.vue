@@ -11,31 +11,47 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
 *{
 	margin: 0;
 	padding: 0;
 }
+html,body,#app{
+	height: 100%;
+}
+.router-link-active{
+	background: deeppink !important;
+}
 button{
-	width: 150px;
 	height: 55px;
-	border-radius: 5px;
 	text-align: center;
 	line-height: 55px;
 	background: #317EF3;
 	border:none;
 	font-size: 16px;
 	letter-spacing: 3px;
+	cursor: pointer;
+	padding: 0 15px;
 }
 button span{
 	color: red;
 }
-html,body,#app{
-	height: 100%;
+.divCls{
+	display: inline-block;
+	height: 55px;
+	line-height: 55px;
+	padding: 0 20px;
+	border:1px solid #dcdcdc;
+	border-radius: 5px;
+	text-align: center;
 }
+.smallText{
+	padding: 10px;
+	font-size: 14px;
+	font-family: "楷体"
+}
+.hr{
+	border-bottom: 1px solid #20b1aa;
+	margin:5px 0;
+}
+
 </style>

@@ -27,24 +27,25 @@ export default new Router({
       path: "/two",
       name: "two",
       component: Two,
+      redirect:{name:"twoC1"},
       children:[
       	{
-      		path:"/two/twoc1",
+      		path:"twoc1",
       		name:"twoC1",
       		component:TwoC1
       	},
       	{
-      		path:"/two/twoc2",
+      		path:"twoc2",
       		name:"twoC2",
       		component:TwoC2
       	},
       	{
-      		path:"/two/twoc3",
+      		path:"twoc3",
       		name:"twoC3",
       		component:TwoC3
       	},
       	{
-      		path:"/two/twoc4",
+      		path:"twoc4",
       		name:"twoC4",
       		component:TwoC4
       	}

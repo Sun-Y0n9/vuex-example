@@ -1,6 +1,7 @@
 <template>
     <div class="twoC3Cls">
       	<button>第<span>2.3</span>页面按钮</button>
+        <button>路由参数 : {{u}}</button>
     </div>
 </template>
 
@@ -9,7 +10,7 @@ export default {
     name: 'twoC3',
     data () {
         return {
-         	
+         	u:""
         }
     },
     methods:{
@@ -19,10 +20,7 @@ export default {
 
     },
     created(){
-    
-    },
-    mounted(){
-    
+        this.u = this.$route.query.u;
     }
 }
 </script>
