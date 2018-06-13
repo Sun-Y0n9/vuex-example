@@ -26,6 +26,21 @@
 <script>
 import TopNav from "../components/topNav.vue"
 import { mapState } from 'vuex'
+var localComputed = {
+    localComputedCount(){
+        return this.inputText + "--" +Math.random()
+    }
+}
+var blend = (local, mapState) => {
+    var obj = {};
+    for(var k in local){
+        obj[k] = local[k];
+    }
+    for(var k in mapState){
+        obj[k] = mapState[k];
+    }
+    return obj;
+};
 export default {
     name: 'fouView',
     data () {
@@ -47,8 +62,8 @@ export default {
             return this.inputText + "--" +Math.random()
         },
         ...mapState(["count","anotherCount"])
-
     }
+    // computed: blend(localComputed, mapState(["count","anotherCount"]))
 }
 </script>
 

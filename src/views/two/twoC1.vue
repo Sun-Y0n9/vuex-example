@@ -12,11 +12,17 @@
             store中的count : {{count}}
         </div> 
         <div class="divCls">
-            使用别名显示store中的anotherCount : {{anotherCount}}
+            store中的count : {{anyVar}} -
+        </div>
+        <div class="divCls">
+            使用别名显示store中的anotherCount : {{localCountA}}
         </div> 
         <div class="divCls">
             获得store中的count,并与本组件中的变量相加 : {{useCountWithComponentVar}}
-        </div>  
+        </div>
+        <div class="divCls">
+            获得store中的count,并与本组件中的变量相乘 : {{normalFunction}}
+        </div> 
     </div>
 </template>
 
@@ -43,9 +49,13 @@ export default {
     },
     computed: mapState({
         count: s => s.count,
-        anotherCount: "count",
+        anyVar: s => s.count,
+        localCountA: "count",
         useCountWithComponentVar (state) {
-          return state.count + this.localCount
+          return state.count + this.localCount;
+        },
+        normalFunction: function(state){
+            return state.count * this.localCount;
         }
     })
 }

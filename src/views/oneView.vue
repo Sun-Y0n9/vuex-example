@@ -1,11 +1,11 @@
 <template>
     <div class="oneViewCls">
-    	<top-nav></top-nav>
-    	<div class="content">
+        <top-nav></top-nav>
+        <div class="content">
             <div class="hr"></div>
             <div class="btns">
                 <button>第<span>一</span>页面按钮</button>
-                <button @click='addStoreCount'>增加Count</button>
+                <button>增加Count</button>
                 <button @click="to2_1">跳至2.1</button>
                 <button @click="to2_3">跳至2.3</button>
             </div>
@@ -35,13 +35,10 @@ export default {
         },
         to2_3(){
             this.$router.push({name:"twoC3",query:{u:17}});
-        },
-        addStoreCount(){
-            this.$store.commit('addCount')    
         }
     },
     components:{
-    	TopNav,
+        TopNav,
         ColorCircle
     },
     created(){
