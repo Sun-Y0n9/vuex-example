@@ -1,13 +1,26 @@
 <template>
     <div class="topNavCls">
-        <router-link class='item' to="/one" tag="div">壹</router-link>
-        <router-link class='item' to="/two" tag="div">贰</router-link>
-        <router-link class='item' to="/thr" tag="div">叁</router-link>
-        <router-link class='item' to="/fou" tag="div">肆</router-link>
+        <router-link class='item' to="/one" tag="div">
+            <span>壹</span>
+            <left-top-text :info="{text:'路由1','bgColor':'#000',color:'#fff'}"></left-top-text>
+        </router-link>
+        <router-link class='item' to="/two" tag="div">
+            <span>贰</span>
+            <left-top-text :info="{text:'路由2','bgColor':'#000',color:'#fff'}"></left-top-text>
+        </router-link>
+        <router-link class='item' to="/thr" tag="div">
+            <span>叁</span>
+            <left-top-text :info="{text:'路由3','bgColor':'#000',color:'#fff'}"></left-top-text>
+        </router-link>
+        <router-link class='item' to="/fou" tag="div">
+            <span>肆</span>
+            <left-top-text :info="{text:'路由4','bgColor':'#000',color:'#fff'}"></left-top-text>
+        </router-link>
     </div>
 </template>
 
 <script>
+import leftTopText from "./leftTopText.vue"
 export default {
     name: 'TopNav',
     data () {
@@ -19,7 +32,7 @@ export default {
     
     },
     components:{
-
+        leftTopText
     },
     created(){
     
@@ -46,6 +59,7 @@ export default {
     text-align: center;
     line-height: 175px;
     cursor: pointer;
+    position: relative;
   }
   .active-class{
 

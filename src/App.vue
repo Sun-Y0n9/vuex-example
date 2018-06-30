@@ -53,5 +53,14 @@ button span{
 	border-bottom: 1px solid #20b1aa;
 	margin:5px 0;
 }
-
+li{
+	list-style: none;
+	font-size: 16px;
+	border:1px solid #dcdcdc;
+	width: 400px;
+	padding: 10px 0;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	padding-left: 15px;
+}
 </style>
