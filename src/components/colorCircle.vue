@@ -1,6 +1,6 @@
 <template>
-    <div class="circle" :style="cStyles">
-      
+    <div class="circle" :style="cStyles" @click="addCount">
+        CLICK ME
     </div>
 </template>
 
@@ -12,7 +12,8 @@ export default {
          	cStyles:{
                 background:this.cInfo.bgColor,
                 width:this.cInfo.r + "px",
-                height:this.cInfo.r + "px"
+                height:this.cInfo.r + "px",
+                lineHeight:this.cInfo.r + "px"
             }
         }
     },
@@ -27,6 +28,11 @@ export default {
             }
         }
     },
+    methods:{
+        addCount(){
+            this.$store.commit("addCount")
+        }
+    },
     computed:{
         
     }
@@ -37,5 +43,6 @@ export default {
     .circle{
        border-radius: 50%; 
        display: inline-block;
+       text-align: center;
     }
 </style>

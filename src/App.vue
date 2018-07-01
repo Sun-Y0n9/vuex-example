@@ -63,4 +63,10 @@ li{
 	box-sizing: border-box;
 	padding-left: 15px;
 }
+.h2{
+	text-align: center;
+	padding: 10px 0;
+	background: #dcdcdc;
+	margin: 5px 0;
+}
 </style>

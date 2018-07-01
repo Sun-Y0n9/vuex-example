@@ -1,23 +1,17 @@
 <template>
     <div class="oneViewCls">
         <top-nav></top-nav>
+        <div class="hr"></div>
         <div class="content">
-            <div class="hr"></div>
-            <div class="btns">
-                <button>第<span>一</span>页面按钮</button>
-                <button>增加Count</button>
-                <button @click="to2_1">跳至2.1</button>
-                <button @click="to2_3">跳至2.3</button>
+            <div>
+                <h2 class="h2">state部分</h2>
+                <div class="divCls">
+                    store中的count : {{count}}
+                </div> 
             </div>
-            <div class="hr"></div>
-            <div class="divCls">
-                store中的count : {{count}}
-            </div> 
-            <div class="hr"></div>
-            <color-circle :cInfo="{bgColor:'#20b1aa',r:100}"></color-circle> 
-            <div class="hr"></div>
-            <h1>getters</h1>
-            <div class="uls">
+            <div>
+                <h2 class="h2">getters</h2>
+                <div class="uls">
                 <div>
                     <h3>使用getter</h3>
                     <ul>
@@ -42,21 +36,27 @@
                         <li v-for="item in ageArrayUseVueProtoFilter">{{item.name}} : {{item.age}}</li>
                     </ul> 
                 </div>               
-            </div>
-            <div>
-                <h2>getter的第二个参数演示:</h2>
-                <h3>通过getter2中,调用getter1,得到getter1过滤后数组的长度 {{gt18length}}</h3>
-            </div>
-            <div class="queryAge">
-                <h3>根据姓名查询年龄</h3>
-                <div>
-                    <span>请输入姓名</span>
-                    <input type="text" placeholder="请输入姓名" v-model="name">
-                    <span> 年龄 : {{personName}}</span>
                 </div>
+                <div>
+                    <h2 class="h2">getter的第二个参数演示:</h2>
+                    <h3>通过getter2中,调用getter1,得到getter1过滤后数组的长度 {{gt18length}}</h3>
+                </div>
+                <div class="queryAge">
+                    <h3>根据姓名查询年龄</h3>
+                    <div>
+                        <span>请输入姓名</span>
+                        <input type="text" placeholder="请输入姓名" v-model="name">
+                        <span> 年龄 : {{personName}}</span>
+                    </div>
+                </div>               
             </div>
             <div>
+                <h2 class="h2">mutation部分</h2>
+                <button @click="addCountInR1">增加Count</button>
+                <button @click="to2_1">跳至2.1</button>
+                <button @click="to2_3">跳至2.3</button>
                 <button @click="pushDataToArray">向main.js中的array push一条数据, 看两种不同的调用方式的差异</button>
+                <color-circle :cInfo="{bgColor:'#20b1aa',r:100}"></color-circle> 
             </div>
         </div>
     </div>
@@ -85,6 +85,9 @@ export default {
             return arr.filter((ele, ind) => {
                 return ele.age > 18;
             });
+        },
+        addCountInR1(){
+            this.$store.commit("addCount");
         },
         pushDataToArray(){
             this.$store.commit('pushDataToArrat')

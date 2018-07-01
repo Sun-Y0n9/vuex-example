@@ -13,6 +13,9 @@ const store = new Vuex.Store({
 	state:{
 		count:13,
 		anotherCount:17,
+		aObject:{
+			a:147
+		},
 		array:[
 			{	
 				name:"lis",
@@ -35,6 +38,17 @@ const store = new Vuex.Store({
 	mutations:{
 		addCount(state){
 			state.count++;
+		},
+		addCountWithParams(state, params){
+			state.count += params;
+		},
+		addCountWithObjParams(state, params){
+			state.count += params.num;
+		},
+		changeAvalue(state){
+			// state.aObject.b = 149;
+			Vue.set(state.aObject, "b", 149);
+			console.log(state.aObject);
 		},
 		pushDataToArrat(state){
 			state.array.push({
