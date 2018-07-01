@@ -69,4 +69,9 @@ li{
 	background: #dcdcdc;
 	margin: 5px 0;
 }
+.h3{
+	padding: 5px 0;
+	text-align: center;
+	background: #dcdcdd;
+}
 </style>

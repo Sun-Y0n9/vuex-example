@@ -38,7 +38,7 @@
                 </div>               
                 </div>
                 <div>
-                    <h2 class="h2">getter的第二个参数演示:</h2>
+                    <h3 class="h3">getter的第二个参数演示:</h3>
                     <h3>通过getter2中,调用getter1,得到getter1过滤后数组的长度 {{gt18length}}</h3>
                 </div>
                 <div class="queryAge">
