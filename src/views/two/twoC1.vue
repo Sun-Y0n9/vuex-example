@@ -25,6 +25,14 @@
             <button @click="addCount">传递参数增加count</button>
             <button>路由参数 : {{u}}</button>
         </div>
+        <div>
+            <h2 class="h2">action部分</h2>
+            <div>
+                <button @click="getTop250Action">点击获取top250数据Action</button>
+                <button @click="getTop250Mutation">点击获取top250数据Mutation</button>
+                <span>豆瓣电影top250排在第一位的电影是 : {{tName}}</span>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -44,6 +52,12 @@ export default {
         },
         addCount(){
             this.$store.commit("addCountWithParams", Math.ceil(Math.random() * 20));
+        },
+        getTop250Action(){
+            this.$store.dispatch('top250FirstName');
+        },
+        getTop250Mutation(){
+            this.$store.commit("del");
         }
     },
     components:{
@@ -61,11 +75,14 @@ export default {
         },
         normalFunction: function(state){
             return state.count * this.localCount;
-        }
+        },
+        tName : s => s.tName
     })
 }
 </script>
 
 <style scoped type="text/css">
-
+    div{
+        font-size: 14px;
+    }
 </style>

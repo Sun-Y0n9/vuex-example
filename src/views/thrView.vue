@@ -18,6 +18,12 @@
                     <li v-for="(v,k) in aObject">store中的对象aObject的 {{k}} 的值 : {{v}}</li> 
                 </ul>
             </div>
+            <div>
+                <h2 class="h2">action部分</h2>
+                <div>
+                    豆瓣电影top250排在第一位的电影是 : {{tName}}
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -58,12 +64,15 @@ export default {
     created(){
     
     },
-    computed:mapState(["anotherCount","count", "aObject"])
+    computed:mapState(["anotherCount","count", "aObject", "tName"])
 }
 </script>
 
 <style scoped type="text/css">
     .btns{
         position: relative;
+    }
+    div{
+        font-size: 14px;
     }
 </style>

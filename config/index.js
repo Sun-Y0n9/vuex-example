@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
         '/': {
-            target: 'http://localhost:3000', 
+            target: 'https://api.douban.com', 
             changeOrigin: true, //是否跨域
         }
     },

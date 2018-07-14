@@ -16,6 +16,7 @@ const store = new Vuex.Store({
 		aObject:{
 			a:147
 		},
+		tName:"",
 		array:[
 			{	
 				name:"lis",
@@ -50,11 +51,27 @@ const store = new Vuex.Store({
 			Vue.set(state.aObject, "b", 149);
 			console.log(state.aObject);
 		},
+		changeTname(state, name){
+			state.tName = name;
+		},
 		pushDataToArrat(state){
 			state.array.push({
 				name:"sunq",
 				age:100
 			})
+		},
+		del(state){
+			axios({
+	            method:"get",
+	            url:"/v2/movie/top250"
+	        })
+	        .then(res => {
+	        	console.log(res);
+	        	state.tName =  res.data.subjects[0].title;
+	        })
+	        .catch(err => {
+	            console.log(err, "获取豆瓣数据失败");
+	        })
 		}
 	},
 	getters:{
@@ -81,6 +98,20 @@ const store = new Vuex.Store({
 				let age = oneData ? oneData.age : "查无此人"
 				return age; 
 			}
+		}
+	},
+	actions: {
+		top250FirstName(context){
+			axios({
+	            method:"get",
+	            url:"/v2/movie/top250"
+	        })
+	        .then(res => {
+	        	context.commit("changeTname", res.data.subjects[0].title)
+	        })
+	        .catch(err => {
+	            console.log(err, "获取豆瓣数据失败");
+	        })
 		}
 	}
 });
