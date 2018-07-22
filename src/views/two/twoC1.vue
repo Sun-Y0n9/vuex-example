@@ -12,7 +12,7 @@
             store中的count : {{count}}
         </div> 
         <div class="divCls">
-            store中的count : {{anyVar}} -
+            store中的count : {{anyVar}} 
         </div>
         <div class="divCls">
             使用别名显示store中的anotherCount : {{localCountA}}
