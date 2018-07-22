@@ -29,8 +29,7 @@ export default {
     name: 'oneView',
     data () {
         return {
-            countInData: this.$store.state.count,
-            countInWatch: ""
+            countInData: this.$store.state.count
         }
     },
     methods:{
