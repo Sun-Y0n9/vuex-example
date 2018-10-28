@@ -87,7 +87,6 @@ export default {
     border:none;
     padding-left: 10px;
     outline: none;
-    quotes: 
 }
 span.count{
     font-size: 30px;
